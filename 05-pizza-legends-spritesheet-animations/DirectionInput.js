@@ -26,6 +26,7 @@ class DirectionInput {
         console.log(this.heldDirections)
       }
     });
+
     document.addEventListener("keyup", e => {
       const dir = this.map[e.code];
       const index = this.heldDirections.indexOf(dir);
@@ -36,5 +37,5 @@ class DirectionInput {
     })
 
   }
-
+  
 }

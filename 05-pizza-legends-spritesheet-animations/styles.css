@@ -11,12 +11,14 @@ body {
 
 .game-container {
   position: relative; 
-  width: 352px;
-  height: 198px;
+  
+  width: 816px;/* to modify */
+  height: 600px;/* to modify */
+
   margin: 0 auto;
   outline: 1px solid #fff;
 
-  transform: scale(3) translateY(50%);
+  transform: scale(1) translateY(20%);
 }
 
 .game-container canvas {

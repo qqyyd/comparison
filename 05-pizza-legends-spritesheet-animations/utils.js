@@ -1,5 +1,5 @@
 const utils = {
   withGrid(n) {
-    return n * 16;
+    return n * 48;
   }
 }
