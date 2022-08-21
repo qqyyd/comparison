@@ -11,27 +11,31 @@ class Overworld {
       //Clear off the canvas
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-      //Establish the camera person
+      //建立摄像机人物
       const cameraPerson = this.map.gameObjects.hero;
-
-      //Update all objects
+      
+      //提前更新所有的事物
       Object.values(this.map.gameObjects).forEach(object => {
         object.update({
           arrow: this.directionInput.direction,
-          map: this.map,
+          map:this.map,
         })
       })
+    
 
       //Draw Lower layer
-      this.map.drawLowerImage(this.ctx, cameraPerson);
+      this.map.drawLowerImage(this.ctx,cameraPerson);
 
       //Draw Game Objects
       Object.values(this.map.gameObjects).forEach(object => {
-        object.sprite.draw(this.ctx, cameraPerson);
+        object.update({
+          arrow: this.directionInput.direction
+        })
+        object.sprite.draw(this.ctx,cameraPerson);
       })
 
       //Draw Upper layer
-      this.map.drawUpperImage(this.ctx, cameraPerson);
+      this.map.drawUpperImage(this.ctx,cameraPerson);
       
       requestAnimationFrame(() => {
         step();   

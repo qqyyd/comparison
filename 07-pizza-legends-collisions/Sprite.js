@@ -12,7 +12,7 @@ class Sprite {
     this.shadow = new Image();
     this.useShadow = true; //config.useShadow || false
     if (this.useShadow) {
-      this.shadow.src = "./images/characters/shadow.png";
+      this.shadow.src = "./images/shadow.png";
     }
     this.shadow.onload = () => {
       this.isShadowLoaded = true;
@@ -71,9 +71,9 @@ class Sprite {
   }
   
 
-  draw(ctx, cameraPerson) {
-    const x = this.gameObject.x + utils.withGrid(10.5) - cameraPerson.x;
-    const y = this.gameObject.y-3 + utils.withGrid(6) - cameraPerson.y;
+  draw(ctx,cameraPerson) {
+    const x = this.gameObject.x +utils.withGrid(8.5)-cameraPerson.x;
+    const y = this.gameObject.y - 3+utils.withGrid(7.5)-cameraPerson.y;
 
     this.isShadowLoaded && ctx.drawImage(this.shadow, x, y);
 

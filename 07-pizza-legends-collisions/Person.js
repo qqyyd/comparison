@@ -16,23 +16,19 @@ class Person extends GameObject {
   update(state) {
     if (this.movingProgressRemaining > 0) {
       this.updatePosition();
-    } else {
+    }else{
 
-      //More cases for starting to walk will come here
-      //
-      //
-
-      //Case: We're keyboard ready and have an arrow pressed
+      //Case:We're keyboard ready and have an arrow pressed
       if (this.isPlayerControlled && state.arrow) {
-        this.startBehavior(state, {
-          type: "walk",
-          direction: state.arrow
+        this.startBehavior(state,{
+          type:"walk",
+          direction:state.arrow
         })
       }
       this.updateSprite(state);
     }
   }
-
+  
   startBehavior(state, behavior) {
     //Set character direction to whatever behavior has
     this.direction = behavior.direction;
@@ -57,6 +53,7 @@ class Person extends GameObject {
   }
 
   updateSprite() {
+
     if (this.movingProgressRemaining > 0) {
       this.sprite.setAnimation("walk-"+this.direction);
       return;

@@ -10,20 +10,18 @@ class OverworldMap {
     this.upperImage.src = config.upperSrc;
   }
 
-  drawLowerImage(ctx, cameraPerson) {
-    ctx.drawImage(
-      this.lowerImage, 
-      utils.withGrid(10.5) - cameraPerson.x, 
-      utils.withGrid(6) - cameraPerson.y
-      )
+  drawLowerImage(ctx,cameraPerson) {
+    ctx.drawImage(this.lowerImage, 
+    utils.withGrid(5)-cameraPerson.x, 
+    utils.withGrid(7)-cameraPerson.y
+    )
   }
 
-  drawUpperImage(ctx, cameraPerson) {
-    ctx.drawImage(
-      this.upperImage, 
-      utils.withGrid(10.5) - cameraPerson.x, 
-      utils.withGrid(6) - cameraPerson.y
-    )
+  drawUpperImage(ctx,cameraPerson) {
+    ctx.drawImage(this.upperImage, 
+      utils.withGrid(5)-cameraPerson.x, 
+      utils.withGrid(7)-cameraPerson.y
+      )
   } 
 
   isSpaceTaken(currentX, currentY, direction) {
@@ -51,30 +49,21 @@ class OverworldMap {
     const {x,y} = utils.nextPosition(wasX, wasY, direction);
     this.addWall(x,y);
   }
-
 }
 
 window.OverworldMaps = {
   DemoRoom: {
-    lowerSrc: "./images2/Upper.png",
-    upperSrc: "./images2/Lower.png",
+    lowerSrc: "./images/Lower.png",
+    upperSrc: "./images/Upper.png",
     gameObjects: {
       hero: new Person({
         isPlayerControlled: true,
-        x: utils.withGrid(5),
-        y: utils.withGrid(7),
+        x: utils.withGrid(1.5),
+        y: utils.withGrid(7.5),
       }),
-      //npc1: new Person({
-       // x: utils.withGrid(7),
-        //y: utils.withGrid(9),
-        //src: "/images/characters/people/npc1.png"
-      //})
     },
     walls: {
-      [utils.asGridCoord(7,6)] : true,
-      [utils.asGridCoord(8,6)] : true,
-      [utils.asGridCoord(7,7)] : true,
-      [utils.asGridCoord(8,7)] : true,
+      [utils.asGridCoord(0.5,7.5)] : true,
     }
   },
 }

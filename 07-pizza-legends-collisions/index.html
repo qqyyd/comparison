@@ -1,23 +1,70 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Pizza Legends</title>
-    <link href="./styles.css" type="text/css" rel="stylesheet">
-  </head>
-  <body>
-    <div class="game-container">
-      <canvas class="game-canvas" width="816" height="600"></canvas>
+<html lang="zh" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>再见</title>
+  <link rel="stylesheet" href="./login/login.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./login/login.js" defer></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="title-text">
+      <div class="title login">《再见》<br>Second Sight</div>
+      <div class="title signup">《再见》<br>Second Sight</div>
     </div>
+    <div class="form-container">
+      <div class="slide-controls">
+        <input type="radio" name="slide" id="login" checked>
+        <input type="radio" name="slide" id="signup">
+        <label for="login" class="slide login">登入</label>
+        <label for="signup" class="slide signup">注册</label>
+        <div class="slider-tab"></div>
+      </div>
+      <div class="form-inner">
+        <form action="#" class="login">
+          <div class="field">
+            <input type="text" placeholder="用户名 Username" id="logUN" required>
+          </div>
+          <div class="field">
+            <input type="password" placeholder="密码 Password" id="logPW" required>
+          </div>
+          <!-- <div class="pass-link"><a href="#">Forgot password?</a></div> -->
+          <div class="field btn">
+            <div class="btn-layer"></div>
+            <input type="submit" value="登入" onclick="log()">
+          </div>
+          <div class="signup-link">初次见面?<a href=""> 注册</a></div>
+          <div class="about-us-link"><a href="./introduction/intro-index/index.html">关于我们</a></div>
+        </form>
 
-    <!-- Scripts -->
-    <script src="./utils.js"></script>
-    <script src="./DirectionInput.js"></script>
-    <script src="./Overworld.js"></script>
-    <script src="./GameObject.js"></script>
-    <script src="./Person.js"></script>
-    <script src="./Sprite.js"></script>
-    <script src="./OverworldMap.js"></script>
-    <script src="./init.js"></script>
+        <form action="#" class="signup">
+          <div class="field">
+            <input type="text" placeholder="用户名 Username" id="regUN" required>
+          </div>
 
-  </body>
+          <div class="field">
+            <input type="password" placeholder="密码 Password" id="regPW1" required>
+          </div>
+
+          <div class="field">
+            <input type="password" placeholder="确认密码 Confirm password" id="regPW2" required>
+          </div>
+
+          <div class="field btn">
+            <div class="btn-layer"></div>
+            <input type="submit" value="注册" onclick="reg()">
+            <!-- <button onclick="reg()">注册</button> -->
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+
 </html>

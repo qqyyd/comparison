@@ -3,12 +3,12 @@ const utils = {
     return n * 48;
   },
   asGridCoord(x,y) {
-    return `${x*16},${y*16}`
+    return `${x*48},${y*48}`
   },
   nextPosition(initialX, initialY, direction) {
     let x = initialX;
     let y = initialY;
-    const size = 16;
+    const size = 48;
     if (direction === "left") { 
       x -= size;
     } else if (direction === "right") {
@@ -20,5 +20,4 @@ const utils = {
     }
     return {x,y};
   }
-  
 }
